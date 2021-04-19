@@ -14,6 +14,20 @@ namespace NTPVIZE
         static void Main(string[] args)
         {
 
+            XmlDocument fotomac = new XmlDocument();
+            XmlDocument xmlim = new XmlDocument();
+
+            xmlim.Load("fotomac.xml");
+
+            XElement root = XElement.Load("fotomac.xml");
+
+            fotomac.Load("https://www.fotomac.com.tr/rss/anasayfa.xml");
+
+
+
+            Console.ReadKey();
+
+
         }
     }
 }
