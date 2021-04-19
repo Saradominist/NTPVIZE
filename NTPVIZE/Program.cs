@@ -7,7 +7,7 @@ using System.Xml;
 using System.Xml.Linq;
 
 
-namespace NTPVIZE
+namespace VizeNTP
 {
     class Program
     {
@@ -23,6 +23,8 @@ namespace NTPVIZE
 
             fotomac.Load("https://www.fotomac.com.tr/rss/anasayfa.xml");
 
+            root.RemoveAll();
+
             foreach (XmlNode item in fotomac.SelectNodes("rss/channel/item"))
             {
                 Console.WriteLine(item["title"].InnerText);
@@ -37,9 +39,9 @@ namespace NTPVIZE
 
             }
 
+            root.Save("fotomac.xml");
+
             Console.ReadKey();
-
-
         }
     }
 }
